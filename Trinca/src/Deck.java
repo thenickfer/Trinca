@@ -2,16 +2,18 @@ public class Deck {
     private Carta[] cartas = new Carta[54]; 
     public Deck(){
         int index = 0;
-        Naipe naipe;
+        Naipe naipe = null;
+        Valor valor;
         for(int i=0;i<4;i++){
             switch(i){
                 case 0: naipe=Naipe.COPAS;break;
                 case 1: naipe=Naipe.ESPADAS;break;
                 case 2: naipe=Naipe.OUROS;break;
                 case 3: naipe=Naipe.PAUS;break;
+                default: break;
             }
-            for(int j=1;j<=13;j++){
-                cartas[index]=new Carta(naipe, j);
+            for(Valor value : Valor.values()){
+                cartas[index]=new Carta(naipe, value);
                 index++;
             }
         }
