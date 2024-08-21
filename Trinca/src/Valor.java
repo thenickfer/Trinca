@@ -1,0 +1,3 @@
+public enum Valor {
+    UM, DOIS, TRES, QUATRO, CINCO, SEIS, SETE, OITO, NOVE, DEZ, VALETE, RAINHA, REI;
+}
