@@ -16,5 +16,5 @@ public enum Valor {
     Valor(int v) {
        this.v=v;
     }
-    public int getValor(){return v;}
+    public int getValorV(){return v;}
 }

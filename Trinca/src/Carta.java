@@ -14,7 +14,6 @@ class Carta{
     public Valor getValor() {
         return valor;
     }
-
     @Override
     public String toString() {
         return "Carta [naipe=" + naipe + ", valor=" + valor + "]";

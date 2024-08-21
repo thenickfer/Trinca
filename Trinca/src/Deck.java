@@ -1,27 +1,52 @@
 public class Deck {
-    private Carta[] cartas = new Carta[54]; 
+    //int random=(int)(Math.random()*52);
+    private Carta[] cartas = new Carta[52]; 
     public Deck(){
         int index = 0;
-        Naipe naipe = null;
-        Valor valor;
-        for(int i=0;i<4;i++){
-            switch(i){
-                case 0: naipe=Naipe.COPAS;break;
-                case 1: naipe=Naipe.ESPADAS;break;
-                case 2: naipe=Naipe.OUROS;break;
-                case 3: naipe=Naipe.PAUS;break;
-                default: break;
-            }
+        for(Naipe naipe: Naipe.values()){
             for(Valor value : Valor.values()){
                 cartas[index]=new Carta(naipe, value);
                 index++;
             }
         }
     }
-
-    public void insereEmCima(Carta carta){}
-    public Carta retiraDeBaixo(){return null;};
-    public Carta retiraDeCima(){return null;};
-    public Carta olhaDeCima(){return null;};
+    public Carta[] getDeck(){return cartas;}
+    public void insereEmCima(Carta carta){
+        int num=51;
+        while(cartas[num]==null){
+            num--;
+        }
+        num++;
+        cartas[num]=carta;
+    }
+    public Carta retiraDeBaixo(){
+        int num=0;
+        Carta c=null;
+        while(cartas[num]==null){
+            num++;
+        }
+        c=cartas[num];
+        cartas[num]=null;
+        return c;
+    }
+    public Carta retiraDeCima(){
+        int num=51;
+        Carta c=null;
+        while(cartas[num]==null){
+            num--;
+        }
+        c=cartas[num];
+        cartas[num]=null;
+        return c;
+    }
+    public Carta olhaDeCima(){
+        int num=51;
+        Carta c=null;
+        while(cartas[num]==null){
+            num--;
+        }
+        c=cartas[num];
+        return c;
+    }
 }
 
