@@ -4,12 +4,15 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) throws Exception {
         Mao mao=new Mao();
+        System.out.println(Naipe.OUROS);
         System.out.println(Arrays.toString(mao.getMao().toArray()));
     }
     public static void Menu(){
         Scanner sc=new Scanner(System.in);
         int x=0;
+        int rodada = 0;
         while(x!=5){
+            rodada++;
             System.out.println("Nova Rodada:");
             System.out.println("(1) Olhar carta de cima");
             System.out.println("(2) Comprar carta de cima");
@@ -33,6 +36,7 @@ public class App {
                 case 6:
                     break;
                 case 7:
+                    System.out.println("Que pena! Voce jogou "+rodada+" rodadas.");
                     break;
                 default:
                     System.out.println("Numero invalido.");

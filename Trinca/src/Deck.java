@@ -1,3 +1,4 @@
+import java.util.Random;
 public class Deck {
     //int random=(int)(Math.random()*52);
     private Carta[] cartas = new Carta[52]; 
@@ -47,6 +48,18 @@ public class Deck {
         }
         c=cartas[num];
         return c;
+    }
+
+    public void embaralha(){
+        Carta aux = new Carta(null, null);
+        System.out.printf("Embaralhando...");
+        Random rn = new Random();
+        for(int i=0;i<cartas.length;i++){
+            int randomN = rn.nextInt(cartas.length);
+            aux = cartas[i];
+            cartas[i] = cartas[randomN];
+            cartas[randomN] = aux;
+        }
     }
 }
 
