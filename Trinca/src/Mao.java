@@ -5,6 +5,7 @@ public class Mao {
     private Deck deck;
     public Mao(){
         deck=new Deck();
+        deck.embaralha();
         mao=new ArrayList<>();
         for(int i=0;i<9;i++){
             mao.add(deck.retiraDeBaixo());
@@ -12,18 +13,23 @@ public class Mao {
     }
     public ArrayList<Carta> getMao(){return mao;}
     public void compraCartaCima(){
-        mao.add(deck.retiraDeCima());
+        Carta temp = deck.retiraDeCima();
+        mao.add(temp);
+        System.out.println("Voce pegou a carta: \n"+temp);
     }
     public void compraCartaBaixo(){
-        mao.add(deck.retiraDeBaixo());
+        Carta temp = deck.retiraDeBaixo();
+        mao.add(temp);
+        System.out.println("Voce pegou a carta: \n"+temp);
     }
     public void organizaMao(int x,int y){
         Carta aux=mao.get(x);
-        mao.add(x,mao.get(y));
-        mao.add(y,aux);
+        mao.set(x,mao.get(y));
+        mao.set(y,aux);
     }
     public void devolveCartaCima(int num){
         mao.remove(num);
+        deck.embaralha();
         //n usar metodo insere em cima pq quando for retirar outra vai ser a msm
         //ou toda vez que devolver uma, embaralha o deck
     }
@@ -44,5 +50,13 @@ public class Mao {
         if(comparaNaipe(6)&&verificaOrdem(6)){pt3=true;}
         else{pt3=false;}
         return pt1&&pt2&&pt3;
+    }
+
+    public String toString(){
+        String temp = "";
+        for(Carta card : mao){
+            temp += (card.toString());
+        }
+        return temp;
     }
 }

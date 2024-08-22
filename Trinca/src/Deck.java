@@ -40,19 +40,10 @@ public class Deck {
         cartas[num]=null;
         return c;
     }
-    public Carta olhaDeCima(){
-        int num=51;
-        Carta c=null;
-        while(cartas[num]==null){
-            num--;
-        }
-        c=cartas[num];
-        return c;
-    }
 
     public void embaralha(){
         Carta aux = new Carta(null, null);
-        System.out.printf("Embaralhando...");
+        System.out.printf("Embaralhando...\n");
         Random rn = new Random();
         for(int i=0;i<cartas.length;i++){
             int randomN = rn.nextInt(cartas.length);
