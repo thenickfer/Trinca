@@ -35,17 +35,20 @@ public class Mao {
         return (mao.get(x).naipe==mao.get(x+1).naipe)&&(mao.get(x).naipe==mao.get(x+2).naipe);
     }
     public boolean verificaOrdem(int x){
-        return (mao.get(x).getValor()==mao.get(x+1).getValor()+1)&&(mao.get(x).getValor()==mao.get(x+2).getValor()+2);
+        int um=mao.get(x).getValor();
+        int dois=mao.get(x+1).getValor();
+        int tres=mao.get(x+2).getValor();
+        return (um+1==dois)&&(um+2==tres);
     }
     public boolean verificaVitoria(){
         boolean pt1=true; 
         boolean pt2=true; 
         boolean pt3=true;
-        if(comparaNaipe(0)&&verificaOrdem(0)){pt1=true;System.out.println("Primeiro conjunto certo");}
+        if(comparaNaipe(0)&&verificaOrdem(0)){System.out.println("Primeiro conjunto certo");}
         else{pt1=false;}
-        if(comparaNaipe(3)&&verificaOrdem(3)){pt2=true;System.out.println("Segundo conjunto certo");}
+        if(comparaNaipe(3)&&verificaOrdem(3)){System.out.println("Segundo conjunto certo");}
         else{pt2=false;}
-        if(comparaNaipe(6)&&verificaOrdem(6)){pt3=true;System.out.println("Terceiro conjunto certo");}
+        if(comparaNaipe(6)&&verificaOrdem(6)){System.out.println("Terceiro conjunto certo");}
         else{pt3=false;}
         return pt1&&pt2&&pt3;
     }
