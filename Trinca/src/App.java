@@ -1,12 +1,13 @@
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) throws Exception {
         Mao mao=new Mao();
-        Menu(mao);
+        Deck deck=new Deck();
+        deck.embaralha();
+        Menu(mao,deck);
     }
-    public static void Menu(Mao mao){
+    public static void Menu(Mao mao,Deck deck){
         Scanner sc=new Scanner(System.in);
         int x=0;
         int rodada = 0;
@@ -23,10 +24,10 @@ public class App {
             x=Integer.parseInt(sc.nextLine());
             switch (x) {
                 case 1:
-                    mao.compraCartaCima();
+                    mao.compraCartaCima(deck);
                     break;
                 case 2:
-                    mao.compraCartaBaixo();
+                    mao.compraCartaBaixo(deck);
                     break;
                 case 3:
                     System.out.println(mao+"\nQuais os indices das cartas gostaria de trocar de lugar? \n");
@@ -39,7 +40,8 @@ public class App {
                 case 4:
                     System.out.println(mao+"\nQual e o indice da carta gostaria de descartar? \n");
                     int ind = Integer.parseInt(sc.nextLine())-1;
-                    mao.devolveCartaCima(ind);
+                    mao.devolveCartaCima(ind,deck);
+                    //deck.embaralha();
                     break;
                 case 5:
                     if(mao.verificaVitoria()){

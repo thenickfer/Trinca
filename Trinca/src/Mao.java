@@ -2,22 +2,21 @@ import java.util.ArrayList;
 
 public class Mao {
     private ArrayList<Carta> mao;
-    private Deck deck;
     public Mao(){
-        deck=new Deck();
-        deck.embaralha();
         mao=new ArrayList<>();
+    }
+    public void criarMao(Deck deck){
         for(int i=0;i<9;i++){
             mao.add(deck.retiraDeBaixo());
         }
     }
     public ArrayList<Carta> getMao(){return mao;}
-    public void compraCartaCima(){
+    public void compraCartaCima(Deck deck){
         Carta temp = deck.retiraDeCima();
         mao.add(temp);
         System.out.println("Voce pegou a carta: \n"+temp);
     }
-    public void compraCartaBaixo(){
+    public void compraCartaBaixo(Deck deck){
         Carta temp = deck.retiraDeBaixo();
         mao.add(temp);
         System.out.println("Voce pegou a carta: \n"+temp);
@@ -27,11 +26,10 @@ public class Mao {
         mao.set(x,mao.get(y));
         mao.set(y,aux);
     }
-    public void devolveCartaCima(int num){
+    public void devolveCartaCima(int num,Deck deck){
+        Carta c=mao.get(num);
         mao.remove(num);
-        deck.embaralha();
-        //n usar metodo insere em cima pq quando for retirar outra vai ser a msm
-        //ou toda vez que devolver uma, embaralha o deck
+        deck.insereEmCima(c);
     }
     public boolean comparaNaipe(int x){
         return (mao.get(x).naipe==mao.get(x+1).naipe)&&(mao.get(x).naipe==mao.get(x+2).naipe);
