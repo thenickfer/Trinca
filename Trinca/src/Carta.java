@@ -16,8 +16,8 @@ class Carta{
     }
     @Override
     public String toString() {
-        //return "Carta [naipe=" + naipe + ", valor=" + valor + "]";
+        return "Carta [naipe=" + naipe + ", valor=" + valor + "]";
         //ToString pra printar a carta bonitinha, mas fica mto ruim de fazer teste;
-        return ("\n"+valor.getValorV()+"--------+\n"+"|        |\n"+"|        |\n  "+naipe+"\n|        |\n"+"|        |\n"+"+--------"+valor.getValorV());
+        //return ("\n"+valor.getValorV()+"--------+\n"+"|        |\n"+"|        |\n  "+naipe+"\n|        |\n"+"|        |\n"+"+--------"+valor.getValorV());
     }
 }
