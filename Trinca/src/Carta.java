@@ -11,8 +11,8 @@ class Carta{
         return naipe;
     }
 
-    public Valor getValor() {
-        return valor;
+    public int getValor() {
+        return valor.getValorV();
     }
     @Override
     public String toString() {

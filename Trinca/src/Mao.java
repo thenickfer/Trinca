@@ -37,7 +37,7 @@ public class Mao {
         return (mao.get(x).naipe==mao.get(x+1).naipe)&&(mao.get(x).naipe==mao.get(x+2).naipe);
     }
     public boolean verificaOrdem(int x){
-        return (mao.get(x).getValor().getValorV()==mao.get(x+1).getValor().getValorV()+1)&&(mao.get(x).getValor().getValorV()==mao.get(x+2).getValor().getValorV()+2);
+        return (mao.get(x).getValor()==mao.get(x+1).getValor()+1)&&(mao.get(x).getValor()==mao.get(x+2).getValor()+2);
     }
     public boolean verificaVitoria(){
         boolean pt1=true; 
