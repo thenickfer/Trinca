@@ -2,8 +2,9 @@ import java.util.Random;
 public class Deck {
     //int random=(int)(Math.random()*52);
     private Carta[] cartas = new Carta[52]; 
+    private int index;
     public Deck(){
-        int index = 0;
+        index = 0;
         for(Naipe naipe: Naipe.values()){
             for(Valor value : Valor.values()){
                 cartas[index]=new Carta(naipe, value);
@@ -28,6 +29,12 @@ public class Deck {
         }
         c=cartas[num];
         cartas[num]=null;
+        int temp=cartas.length-1;
+        for(int i=0;i<temp-1;i++){
+            cartas[i]=cartas[i+1];
+        }
+        cartas[temp]=null;
+        index--;
         return c;
     }
     public Carta retiraDeCima(){
