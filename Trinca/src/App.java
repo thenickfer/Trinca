@@ -5,6 +5,7 @@ public class App {
         Mao mao=new Mao();
         Deck deck=new Deck();
         deck.embaralha();
+        mao.criarMao(deck);
         Menu(mao,deck);
     }
     public static void Menu(Mao mao,Deck deck){

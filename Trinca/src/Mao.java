@@ -41,20 +41,24 @@ public class Mao {
         boolean pt1=true; 
         boolean pt2=true; 
         boolean pt3=true;
-        if(comparaNaipe(0)&&verificaOrdem(0)){pt1=true;}
+        if(comparaNaipe(0)&&verificaOrdem(0)){pt1=true;System.out.println("Primeiro conjunto certo");}
         else{pt1=false;}
-        if(comparaNaipe(3)&&verificaOrdem(3)){pt2=true;}
+        if(comparaNaipe(3)&&verificaOrdem(3)){pt2=true;System.out.println("Segundo conjunto certo");}
         else{pt2=false;}
-        if(comparaNaipe(6)&&verificaOrdem(6)){pt3=true;}
+        if(comparaNaipe(6)&&verificaOrdem(6)){pt3=true;System.out.println("Terceiro conjunto certo");}
         else{pt3=false;}
         return pt1&&pt2&&pt3;
     }
-
+    @Override
     public String toString(){
-        String temp = "";
+        StringBuffer a=new StringBuffer();
+        int ind=1;
         for(Carta card : mao){
-            temp += (card.toString());
+            a.append(ind);
+            a.append(card.toString());
+            a.append("\n");
+            ind++;
         }
-        return temp;
+        return a.toString();
     }
 }
