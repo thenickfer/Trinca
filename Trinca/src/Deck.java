@@ -20,6 +20,7 @@ public class Deck {
         }
         num++;
         cartas[num]=carta;
+        index++;
     }
     public Carta retiraDeBaixo(){
         int num=0;
@@ -45,6 +46,7 @@ public class Deck {
         }
         c=cartas[num];
         cartas[num]=null;
+        index--;
         return c;
     }
 
@@ -52,8 +54,8 @@ public class Deck {
         Carta aux = new Carta(null, null);
         System.out.printf("Embaralhando...\n");
         Random rn = new Random();
-        for(int i=0;i<cartas.length;i++){
-            int randomN = rn.nextInt(cartas.length);
+        for(int i=0;i<index;i++){
+            int randomN = rn.nextInt(index);
             aux = cartas[i];
             cartas[i] = cartas[randomN];
             cartas[randomN] = aux;
