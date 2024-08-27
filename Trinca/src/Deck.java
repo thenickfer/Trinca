@@ -50,6 +50,7 @@ public class Deck {
         return c;
     }
 
+
     public void embaralha(){
         Carta aux = new Carta(null, null);
         System.out.printf("Embaralhando...\n");
