@@ -44,9 +44,12 @@ public class App {
 
                     break;
                 case 4:
-                    System.out.println(mao+"\nQual e o indice da carta gostaria de descartar? \n");
-                    int ind = Integer.parseInt(sc.nextLine())-1;
-                    System.out.println(mao.devolveCartaCima(ind,deck)+" descartada\n");
+                    if(comprou){
+                        System.out.println(mao+"\nQual e o indice da carta gostaria de descartar? \n");
+                        int ind = Integer.parseInt(sc.nextLine())-1;
+                        System.out.println(mao.devolveCartaCima(ind,deck)+" descartada\n");
+                    }
+                    else{System.out.println("Você não pode devolver uma carta sem comprar!");}
                     comprou=false;
                     //deck.embaralha();
                     break;
