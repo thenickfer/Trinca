@@ -13,6 +13,7 @@ public class App {
         int x=0;
         int rodada = 0;
         boolean game = true;
+        boolean comprou=false;
         while(game){
             rodada++;
             System.out.println("Nova Rodada:");
@@ -25,10 +26,14 @@ public class App {
             x=Integer.parseInt(sc.nextLine());
             switch (x) {
                 case 1:
-                    mao.compraCartaCima(deck);
+                    if(!comprou){mao.compraCartaCima(deck);}
+                    else{System.out.println("Você não pode comprar uma carta sem devolver outra!");}
+                    comprou=true;
                     break;
                 case 2:
-                    mao.compraCartaBaixo(deck);
+                    if(!comprou){mao.compraCartaBaixo(deck);}
+                    else{System.out.println("Você não pode comprar uma carta sem devolver outra!");}
+                    comprou=true;
                     break;
                 case 3:
                     System.out.println(mao+"\nQuais os indices das cartas gostaria de trocar de lugar? \n");
@@ -42,6 +47,7 @@ public class App {
                     System.out.println(mao+"\nQual e o indice da carta gostaria de descartar? \n");
                     int ind = Integer.parseInt(sc.nextLine())-1;
                     mao.devolveCartaCima(ind,deck);
+                    comprou=false;
                     //deck.embaralha();
                     break;
                 case 5:
