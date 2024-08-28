@@ -9,8 +9,10 @@ public class Deck {
             for(Valor value : Valor.values()){
                 cartas[index]=new Carta(naipe, value);
                 index++;
+                System.out.println(index);
             }
         }
+        index--;
     }
     public Carta[] getDeck(){return cartas;}
     public void insereEmCima(Carta carta){
@@ -23,30 +25,34 @@ public class Deck {
         index++;
     }
     public Carta retiraDeBaixo(){
-        int num=0;
-        Carta c=null;
-        while(cartas[num]==null){
-            num++;
-        }
-        c=cartas[num];
-        cartas[num]=null;
+        //int num=0;
+        Carta c=cartas[0];
+        //while(cartas[num]==null){
+        //    num++;
+        //}
+        //c=cartas[num];
+        //cartas[num]=null;
+        index--;
         int temp=cartas.length-1;
         for(int i=0;i<temp-1;i++){
             cartas[i]=cartas[i+1];
         }
         cartas[temp]=null;
-        index--;
+        System.out.println(index);
         return c;
     }
     public Carta retiraDeCima(){
-        int num=51;
+        //int num=51;
         Carta c=null;
-        while(cartas[num]==null){
-            num--;
-        }
-        c=cartas[num];
-        cartas[num]=null;
+        //while(cartas[num]==null){
+        //    num--;
+        //}
+        //c=cartas[num];
+        //cartas[num]=null;
         index--;
+        c=cartas[index];
+        cartas[index]=null;
+        System.out.println(index);
         return c;
     }
 
