@@ -40,6 +40,10 @@ public class App {
                     System.out.println(mao+"\nQuais os indices das cartas gostaria de trocar de lugar? \n");
                     int y = Integer.parseInt(sc.nextLine())-1;
                     int z = Integer.parseInt(sc.nextLine())-1;
+                    if((y<1)||(y>9)||(z<1)||(z>9)){
+                        System.out.println("Indices invalidos");
+                        break;
+                    }
                     mao.organizaMao(y, z);
 
                     break;
