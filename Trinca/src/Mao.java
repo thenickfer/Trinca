@@ -22,6 +22,9 @@ public class Mao {
         System.out.println("Voce pegou a carta: \n"+temp);
     }
     public void organizaMao(int x,int y){
+        if((x<1||x>9)||(y<1||y>9)||x==y){
+            throw new IndexOutOfBoundsException("Numero Invalido");
+        }
         Carta aux=mao.get(x);
         mao.set(x,mao.get(y));
         mao.set(y,aux);
