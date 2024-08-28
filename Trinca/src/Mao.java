@@ -26,10 +26,11 @@ public class Mao {
         mao.set(x,mao.get(y));
         mao.set(y,aux);
     }
-    public void devolveCartaCima(int num,Deck deck){
+    public Carta devolveCartaCima(int num,Deck deck){
         Carta c=mao.get(num);
         mao.remove(num);
         deck.insereEmCima(c);
+        return c;
     }
     public boolean comparaNaipe(int x){
         return (mao.get(x).naipe==mao.get(x+1).naipe)&&(mao.get(x).naipe==mao.get(x+2).naipe);

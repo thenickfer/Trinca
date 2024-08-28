@@ -16,6 +16,7 @@ public class App {
         boolean comprou=false;
         while(game){
             rodada++;
+            System.out.println(mao);
             System.out.println("Nova Rodada:");
             System.out.println("(1) Comprar carta de cima");
             System.out.println("(2) Comprar carta de baixo");
@@ -40,13 +41,12 @@ public class App {
                     int y = Integer.parseInt(sc.nextLine())-1;
                     int z = Integer.parseInt(sc.nextLine())-1;
                     mao.organizaMao(y, z);
-                    System.out.println(mao);
 
                     break;
                 case 4:
                     System.out.println(mao+"\nQual e o indice da carta gostaria de descartar? \n");
                     int ind = Integer.parseInt(sc.nextLine())-1;
-                    mao.devolveCartaCima(ind,deck);
+                    System.out.println(mao.devolveCartaCima(ind,deck)+" descartada\n");
                     comprou=false;
                     //deck.embaralha();
                     break;

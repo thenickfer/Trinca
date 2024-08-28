@@ -9,7 +9,7 @@ public class Deck {
             for(Valor value : Valor.values()){
                 cartas[index]=new Carta(naipe, value);
                 index++;
-                System.out.println(index);
+                
             }
         }
         index--;
@@ -38,7 +38,7 @@ public class Deck {
             cartas[i]=cartas[i+1];
         }
         cartas[temp]=null;
-        System.out.println(index);
+        
         return c;
     }
     public Carta retiraDeCima(){
@@ -52,7 +52,7 @@ public class Deck {
         index--;
         c=cartas[index];
         cartas[index]=null;
-        System.out.println(index);
+        
         return c;
     }
 
